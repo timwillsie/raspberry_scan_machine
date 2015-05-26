@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# launch message
+logger -t "scan_post_processing" "launch post processing"
+
 root_path="/tmp"
 result_path="${root_path}/result"
 raw_path="raw"
@@ -51,7 +54,7 @@ do
 
 	logger -t "scan_post_processing" "launching ./OCRmyPDF.sh -d -c -l deu ${root_path}/${raw_path}/${dir}/${pdf_filename} ${result_path}/${pdf_filename}"
 
-	sudo ./OCRmyPDF.sh -d -c -l deu ${root_path}/${raw_path}/${dir}/${pdf_filename} ${result_path}/${pdf_filename}
+	./OCRmyPDF.sh -d -c -l deu ${root_path}/${raw_path}/${dir}/${pdf_filename} ${result_path}/${pdf_filename}
 
 	# delete the source files
 
